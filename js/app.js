@@ -7,32 +7,28 @@ console.log(emailList.length)
 
 // creare un prompt che chiede una email all utente
 
+// se non è presente nell' array mandare messaggio di conferma
+
 const newMailUtent= document.getElementById('emailfromutent')
 
-// salvare il valore del prompt dentro una variabile
+// controllare se l'email inserita è presente nel array
 
-const btnConfirm = document.getElementById('buttonconfirm')
-
-btnConfirm.addEventListener('click', function() {
-
-const mailUtent = newMailUtent.value
-console.log(mailUtent)
-
-// aggiungere l' email al array
-
-emailList.push(mailUtent)
-
-// cotrollare se l'email e' presente nell array
-
-console.log(emailList)
+const emailUtent = newMailUtent.value
 
 let emailConfirm = document.getElementById('nuovaemail')
 
-// stampare un messaggio nel DOM con l'esito del controllo
+if (emailList.includes(emailUtent)){
+    
+    emailConfirm.innerHTML = 'La tua email è già stata scelta'
+    
+} else { emailConfirm.innerHTML = 'La tua email: ' + emailUtent + ' è stata confermata'
 
-emailConfirm.innerHTML = 'La tua email: '+ mailUtent + ' è stata confermata'
+   
+}
 
-})
+
+
+
 
 
 
