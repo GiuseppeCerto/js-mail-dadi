@@ -12,19 +12,26 @@ console.log(emailList.length)
 const newMailUtent= document.getElementById('emailfromutent')
 
 // controllare se l'email inserita è presente nel array
+const btnConfirm = document.getElementById('buttonconfirm')
 
-const emailUtent = newMailUtent.value
+btnConfirm.addEventListener('click', function() {
 
-let emailConfirm = document.getElementById('nuovaemail')
+    const emailUtent = newMailUtent.value
 
-if (emailList.includes(emailUtent)){
+    let emailConfirm = document.getElementById('nuovaemail')
+
+    if (emailList.includes(emailUtent)){
+
+        emailConfirm.innerHTML = 'La tua email è già stata scelta'
+        
+    }else { emailConfirm.innerHTML = 'La tua email: ' + emailUtent + ' è stata confermata'
     
-    emailConfirm.innerHTML = 'La tua email è già stata scelta'
+       
+    }
     
-} else { emailConfirm.innerHTML = 'La tua email: ' + emailUtent + ' è stata confermata'
+})
 
-   
-}
+
 
 
 
