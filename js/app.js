@@ -1,3 +1,5 @@
+/***** EMAIL CONFIRM *****/
+
 // creare un array con una lista di mail
 
 const emailList = ['rus3085@gmailni.com', 'belyanskajai@cashbackr.com', 'ewanmc@turuwae.tech', 'en555@enhanceronly.com', 'rooktoqueen@scatterteam.com',]
@@ -23,28 +25,35 @@ btnConfirm.addEventListener('click', function() {
     if (emailList.includes(emailUtent)){
 
         emailConfirm.innerHTML = 'La tua email è già stata scelta'
-        
+
     }else { emailConfirm.innerHTML = 'La tua email: ' + emailUtent + ' è stata confermata'
     
-       
+    }
+    
+})
+
+/***** DICE GAME *****/ 
+
+const btnPlay = document.getElementById('buttonplay')
+
+btnPlay.addEventListener('click', function() {
+
+    // generare un numero random per l' utente
+
+    const dadoUtente = Math.floor(Math.random() * 6) + 1
+
+    // generare un numero random per l' il computer
+
+    const dadoComputer = Math.floor(Math.random() * 6) + 1
+
+    if (dadoUtente > dadoComputer){
+        window.alert('HAI VINTO!')
+
+    }else{
+        window.alert('HAI PERSO!')
     }
     
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// generare un numero random per l' utente
-// generare un numero random per l' il computer
-// stabilire chi vince in base al numero piu alto
 
