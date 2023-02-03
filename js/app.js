@@ -8,17 +8,15 @@ const emailList = ['rus3085@gmailni.com', 'belyanskajai@cashbackr.com', 'ewanmc@
 console.log(emailList)
 console.log(emailList.length)
 
-// creare un prompt che chiede una email all utente
+// creare un form che chiede una email all utente
 
 // se non è presente nell' array mandare messaggio di conferma
 
 const newMailUtent = document.getElementById('emailfromutent')
 
-// controllare se l'email inserita è presente nel array
+// controllare se l'email inserita è presente nel array con ciclo for
 
 const btnConfirm = document.getElementById('buttonconfirm')
-
-
 
 btnConfirm.addEventListener('click', function() {
 
@@ -26,9 +24,7 @@ btnConfirm.addEventListener('click', function() {
 
     console.log(emailUtent)
 
-    let emailConfirm = document.getElementById('nuovaemail')
-
-    let emailCheck = []
+    let emailCheck = false
 
     for (i = 0; i < emailList.length; i++){
 
@@ -39,14 +35,19 @@ btnConfirm.addEventListener('click', function() {
         console.log(emailCheck)
 
         if(emailList[i] === emailUtent){
-            emailCheck = 'alert'
-
-        } else {
-            emailCheck = 'confirmed'
+            emailCheck = true
         }
-    }        
+    }     
 
+    let emailConfirm = document.getElementById('nuovaemail')
 
+    if (emailCheck === true){
+
+        emailConfirm.innerHTML = 'La tua email è già stata usata'
+    }else{
+
+        emailConfirm.innerHTML = 'La tua email è ; ' + emailUtent + ' è stata confermata'
+    }
 })
 
 /***** DICE GAME *****/ 
