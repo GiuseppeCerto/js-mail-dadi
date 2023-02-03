@@ -15,27 +15,38 @@ console.log(emailList.length)
 const newMailUtent = document.getElementById('emailfromutent')
 
 // controllare se l'email inserita è presente nel array
+
 const btnConfirm = document.getElementById('buttonconfirm')
+
+
 
 btnConfirm.addEventListener('click', function() {
 
     const emailUtent = newMailUtent.value
 
+    console.log(emailUtent)
+
     let emailConfirm = document.getElementById('nuovaemail')
 
+    let emailCheck = []
 
-    for (let i = 0; i < emailList.lengt; i++){
+    for (i = 0; i < emailList.length; i++){
 
-        console.log(emailList[i])
+        console.log(i)
 
-        if(emailList[i] === emailUtent) {
-
-        emailConfirm.innerHTML = 'La tua email è già stata scelta'
+        console.log(emailList[i])    
         
-        }else{emailConfirm.innerHTML = 'La tua email: ' + emailUtent + ' è stata confermata'
+        console.log(emailCheck)
 
+        if(emailList[i] === emailUtent){
+            emailCheck = 'alert'
+
+        } else {
+            emailCheck = 'confirmed'
         }
-    }
+    }        
+
+
 })
 
 /***** DICE GAME *****/ 
@@ -58,11 +69,12 @@ btnPlay.addEventListener('click', function() {
 
         let risultatoUtente = document.getElementById('dadoutente')
 
-        risultatoUtente.innerHTML(dadoUtente)
-
     }else{
+
         window.alert('HAI PERSO!')
+        
     }
+
     console.log(dadoComputer)
 
 })
